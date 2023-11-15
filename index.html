@@ -31,11 +31,11 @@ var firebaseConfig = {
     };
     firebase.initializeApp(firebaseConfig);
   
-  // const db = firebase.firestore();
-  //  db.collection('product4').doc('friendkakao').get().then((결과)=>{
-  //   a1 = 결과.data().link
-  //   location.href = a1
-  // })
+  const db = firebase.firestore();
+   db.collection('product4').doc('friendkakao').get().then((결과)=>{
+    a1 = 결과.data().link
+    location.href = a1
+  })
     
   </script>
 </body>
