@@ -30,13 +30,20 @@ var firebaseConfig = {
   appId: "1:758773760067:web:376883ad21ee41080754f6"
     };
     firebase.initializeApp(firebaseConfig);
-  
-  const db = firebase.firestore();
-   db.collection('product4').doc('friendkakao').get().then((결과)=>{
-    a1 = 결과.data().link
-    location.href = a1
-  })
     
+  db.collection('product4').doc('friendkakao').get().then((결과)=>{
+    a2 = String(Number(결과.data().count) + 1)
+    db.collection('product4').doc('friendkakao').update({"count" : a2})  
+    a1 = 결과.data().link
+    time()
+  });
+
+  const time = () => {
+    setTimeout(function() {
+      location.href = a1;
+    }, 1500);
+  } 
+
   </script>
 </body>
 </html>
